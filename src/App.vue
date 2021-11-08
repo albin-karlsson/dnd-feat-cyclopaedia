@@ -1,14 +1,16 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
+  <SearchBar />
   <List />
 </template>
 
 <script>
+import SearchBar from "./components/SearchBar.vue";
 import List from "./components/List.vue";
 
 export default {
   name: "App",
   components: {
+    SearchBar,
     List,
   },
 };

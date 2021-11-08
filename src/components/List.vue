@@ -1,20 +1,23 @@
 <template>
-  <h2>Hello</h2>
+  <h4 v-for="feat in feats" :key="feat.name">{{ feat.name }}</h4>
 </template>
 
 <script>
+import data from "../assets/data.json";
+
 export default {
+  name: "App",
+  components: {},
   data() {
     return {
       feats: [],
     };
   },
   mounted() {
-    console.log("hi");
-    // get feats from json
+    this.feats = data.feats;
   },
 };
 </script>
 
-<style>
+<style scoped>
 </style>

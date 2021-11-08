@@ -1,10 +1,25 @@
-<template></template>
+<template>
+  <input
+    type="text"
+    placeholder="Search feat..."
+    v-model="searchWord"
+    @change="addInput"
+  />
+</template>
 
 <script>
 export default {
   name: "SearchBar",
-  props: {
-    searchWord: String,
+  data() {
+    return {
+      searchWord: "",
+    };
+  },
+  methods: {
+    addInput(event) {
+      // this.$emit("inputAdded", this.searchWord);
+      console.log(this.searchWord);
+    },
   },
 };
 </script>
