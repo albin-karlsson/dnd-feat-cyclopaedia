@@ -1,14 +1,12 @@
-<template>
-
-</template>
+<template></template>
 
 <script>
 export default {
-  name: 'SearchBar',
+  name: "SearchBar",
   props: {
-    searchWord: String
-  }
-}
+    searchWord: String,
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
