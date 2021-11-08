@@ -3,7 +3,7 @@
     type="text"
     placeholder="Search feat..."
     v-model="searchWord"
-    @change="addInput"
+    @input="addInput"
   />
 </template>
 
@@ -17,8 +17,7 @@ export default {
   },
   methods: {
     addInput(event) {
-      // this.$emit("inputAdded", this.searchWord);
-      console.log(this.searchWord);
+      this.$emit("addInput", this.searchWord);
     },
   },
 };

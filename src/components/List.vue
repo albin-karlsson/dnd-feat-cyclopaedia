@@ -8,10 +8,14 @@ import data from "../assets/data.json";
 export default {
   name: "App",
   components: {},
+  props: ["searchWord"],
   data() {
     return {
       feats: [],
     };
+  },
+  updated() {
+    // search the list
   },
   mounted() {
     this.feats = data.feats;

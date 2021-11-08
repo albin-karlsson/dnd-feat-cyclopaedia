@@ -1,6 +1,6 @@
 <template>
-  <SearchBar />
-  <List />
+  <SearchBar @addInput="log" />
+  <List :searchWord="searchWord" />
 </template>
 
 <script>
@@ -12,6 +12,16 @@ export default {
   components: {
     SearchBar,
     List,
+  },
+  data() {
+    return {
+      searchWord: "",
+    };
+  },
+  methods: {
+    log(searchWord) {
+      this.searchWord = searchWord;
+    },
   },
 };
 </script>
