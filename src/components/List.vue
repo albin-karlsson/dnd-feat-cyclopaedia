@@ -1,6 +1,7 @@
 <template>
   <div v-for="feat in filteredFeats" :key="feat.name">
     <h4 v-html="highlight(feat.name)"></h4>
+    <p>{{ feat.desc }}</p>
   </div>
 </template>
 
@@ -22,24 +23,25 @@ export default {
   },
   mounted() {
     this.allFeats = data.feats;
-
-    this.filterFeats();
+    this.filteredFeats = this.allFeats;
   },
   methods: {
     filterFeats() {
-      this.filteredFeats = this.allFeats.filter(
-        (feat) =>
-          feat.name
-            .toLowerCase()
-            .includes(this.searchWord.trim().toLowerCase()) ||
-          feat.desc.toLowerCase().includes(this.searchWord.trim().toLowerCase())
-      );
+      let words = this.searchWord.split(" ").map((word) => word.toLowerCase());
+
+      words.forEach((word) => {
+        this.filteredFeats = this.allFeats.filter(
+          (feat) =>
+            feat.name.toLowerCase().includes(word) ||
+            feat.desc.toLowerCase().includes(word)
+        );
+      });
     },
-    highlight(featName) {
+    highlight(text) {
       if (!this.searchWord) {
-        return featName;
+        return text;
       } else {
-        return featName.replace(new RegExp(this.searchWord, "gi"), (match) => {
+        return text.replace(new RegExp(this.searchWord, "gi"), (match) => {
           return '<span class="highlighted">' + match + "</span>";
         });
       }
