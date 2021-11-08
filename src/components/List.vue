@@ -1,5 +1,5 @@
 <template>
-  <h4 v-for="feat in feats" :key="feat.name">{{ feat.name }}</h4>
+  <h4 v-for="feat in filteredFeats" :key="feat.name">{{ feat.name }}</h4>
 </template>
 
 <script>
@@ -11,14 +11,26 @@ export default {
   props: ["searchWord"],
   data() {
     return {
-      feats: [],
+      allFeats: [],
+      filteredFeats: [],
     };
   },
   updated() {
-    // search the list
+    this.filterFeats();
   },
   mounted() {
-    this.feats = data.feats;
+    this.allFeats = data.feats;
+
+    this.filterFeats();
+  },
+  methods: {
+    filterFeats() {
+      this.filteredFeats = this.allFeats.filter(
+        (feat) =>
+          feat.name.toLowerCase().includes(this.searchWord.toLowerCase()) ||
+          feat.desc.toLowerCase().includes(this.searchWord.toLowerCase())
+      );
+    },
   },
 };
 </script>

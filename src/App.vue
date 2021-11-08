@@ -1,5 +1,5 @@
 <template>
-  <SearchBar @addInput="log" />
+  <SearchBar @inputAdded="logSearchWord" />
   <List :searchWord="searchWord" />
 </template>
 
@@ -19,7 +19,7 @@ export default {
     };
   },
   methods: {
-    log(searchWord) {
+    logSearchWord(searchWord) {
       this.searchWord = searchWord;
     },
   },

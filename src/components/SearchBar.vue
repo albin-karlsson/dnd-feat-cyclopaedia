@@ -17,7 +17,7 @@ export default {
   },
   methods: {
     addInput(event) {
-      this.$emit("addInput", this.searchWord);
+      this.$emit("inputAdded", this.searchWord);
     },
   },
 };
