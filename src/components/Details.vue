@@ -9,11 +9,11 @@
       background
     "
   >
-    <h2>{{ feat.name }}</h2>
-    <p v-if="feat.prerequisite" class="fst-italic">
+    <h1>{{ feat.name }}</h1>
+    <p v-if="feat.prerequisite" class="fs-5 fst-italic">
       Required: {{ feat.prerequisite }}
     </p>
-    <p>{{ feat.desc }}</p>
+    <p class="fs-5">{{ feat.desc }}</p>
   </div>
 </template>
 
@@ -26,7 +26,8 @@ export default {
 <style>
 .background {
   background-color: blanchedalmond;
-  padding: 10px;
+  padding: 30px;
   width: 25%;
+  border-radius: 20px;
 }
 </style>

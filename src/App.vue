@@ -28,6 +28,9 @@ export default {
 </script>
 
 <style>
+body {
+  background-color: lavender;
+}
 #app {
   margin: 5% 20%;
 }
