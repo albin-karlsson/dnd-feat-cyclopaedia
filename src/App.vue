@@ -1,4 +1,5 @@
 <template>
+  <h1 class="display-2 text-center mb-5">Feat Cyclopaedia</h1>
   <SearchBar @inputAdded="logSearchWord" />
   <List :searchWord="searchWord" />
 </template>
@@ -27,4 +28,7 @@ export default {
 </script>
 
 <style>
+#app {
+  margin: 5% 20%;
+}
 </style>

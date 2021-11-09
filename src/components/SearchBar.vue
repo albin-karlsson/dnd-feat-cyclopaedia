@@ -1,5 +1,6 @@
 <template>
   <input
+    class="form-control mb-5"
     type="text"
     placeholder="Search feat..."
     v-model="searchWord"
